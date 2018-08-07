@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_wasiat"
+            android:icon="@drawable/ic_menu_wasiat"
+            android:title="@string/title_wasiat" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_menu_new_wasiat"
+            android:title="@string/title_wasiat_baru" />
+        <item
+            android:id="@+id/nav_favorit"
+            android:icon="@drawable/ic_menu_about_organization"
+            android:title="@string/title_about_organiztion" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/title_settings" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/title_about_aplication" />
+        <item
+            android:id="@+id/nav_wasiat_masa_kini"
+            android:icon="@drawable/ic_menu_rate"
+            android:title="@string/title_rating" />
+    </group>
+
+</menu>
