@@ -7,8 +7,9 @@
     <string name="nama_ponpes">YAYASAN PONDOK PESANTREN SYAIKH ZAINUDDIN</string>
     <string name="alamat_ponpes">NAHDLATUL WATHAN ANJANI LOMBOK TIMUR</string>
 
+    <string name="title_beranda">Beranda</string>
     <string name="title_wasiat">Wasiat</string>
-    <string name="title_wasiat_baru">Wasiat Masa Kini</string>
+    <string name="title_wasiat_baru">Wasiat Baru</string>
     <string name="title_settings">Pengaturan</string>
     <string name="title_about_aplication">Tentang Aplikasi</string>
     <string name="title_about_organiztion">Organisasi NW</string>
@@ -26,7 +27,6 @@
     <string name="text_empty">Kosong</string>
 
     <string name="title_bookmark">Favorit</string>
-    <string name="title_history">Riwayat</string>
     <string name="title_about">Tentang</string>
 
 

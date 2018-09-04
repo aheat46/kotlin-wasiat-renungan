@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/bott_nav_home"
+        android:id="@+id/bott_nav_wasiat"
         android:title="@string/title_wasiat"
-        android:icon="@drawable/ic_menu_home" />
+        android:icon="@drawable/ic_menu_wasiat" />
+
+    <item
+        android:id="@+id/bott_nav_new_wasiat"
+        android:title="@string/title_wasiat_baru"
+        android:icon="@drawable/ic_menu_new_wasiat" />
 
     <item
         android:id="@+id/bott_nav_bookmark"
         android:title="@string/title_bookmark"
         android:icon="@drawable/ic_menu_bookmark" />
-
-    <item
-        android:id="@+id/bott_nav_history"
-        android:title="@string/title_history"
-        android:icon="@drawable/ic_menu_history" />
 
     <item
         android:id="@+id/bott_nav_about"

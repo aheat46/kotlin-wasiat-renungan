@@ -1,14 +1,15 @@
 package wasiat.wasiatnahdlatulwathan.activity
 
-import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Fragment
-import android.app.FragmentTransaction
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
@@ -17,20 +18,35 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
 import wasiat.wasiatnahdlatulwathan.R
 import wasiat.wasiatnahdlatulwathan.fragment.FragmentBookmark
+import wasiat.wasiatnahdlatulwathan.fragment.FragmentNewWasiat
 import wasiat.wasiatnahdlatulwathan.fragment.FragmentWasiat
+import wasiat.wasiatnahdlatulwathan.helper.BottomNavigationBehavior
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),
+        NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
 
     lateinit var toolbar: Toolbar
     var actionBar: ActionBar? = null
-    var fragmentWasiat: FragmentWasiat? = null
-    var fragmentBookmark: FragmentBookmark? = null
+    var activitySettings: SettingsActivity
+    var activityAbout: AboutActivity
+    var fragmentWasiat: FragmentWasiat
+    var fragmentBookmark: FragmentBookmark
+    var fragmentHistory: FragmentNewWasiat
+
+
+    init {
+        this.activitySettings = SettingsActivity()
+        this.fragmentWasiat = FragmentWasiat()
+        this.fragmentBookmark = FragmentBookmark()
+        this.fragmentHistory = FragmentNewWasiat()
+        this.activityAbout = AboutActivity()
+    }
 
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -43,8 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         initNavigation()
         initBottomNavigation()
 
-        fragmentWasiat = Fragment.instantiate(this@MainActivity, FragmentWasiat::class.java.name) as FragmentWasiat
-        loadFragment(fragmentWasiat!!)
+        loadFragment(fragmentWasiat)
 
     }
 
@@ -83,32 +98,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_wasiat -> {
-                fragmentWasiat = Fragment.instantiate(this@MainActivity, FragmentWasiat::class.java.name) as FragmentWasiat
-                loadFragment(fragmentWasiat!!)
-            }
-            R.id.nav_wasiat_masa_kini -> {
-
+            R.id.nav_home -> {
+                loadFragment(fragmentWasiat)
             }
             R.id.nav_settings -> {
-
+                loadActivity(activitySettings)
             }
             R.id.nav_about -> {
-
+                loadActivity(activityAbout)
             }
-            R.id.bott_nav_home -> {
-                fragmentWasiat = Fragment.instantiate(this@MainActivity, FragmentWasiat::class.java.name) as FragmentWasiat
-                loadFragment(fragmentWasiat!!)
+            R.id.bott_nav_wasiat -> {
+                loadFragment(fragmentWasiat)
+            }
+            R.id.bott_nav_new_wasiat -> {
+                loadFragment(fragmentHistory)
             }
             R.id.bott_nav_bookmark -> {
-                fragmentBookmark = Fragment.instantiate(this@MainActivity, FragmentBookmark::class.java.name) as FragmentBookmark
-                loadFragment(fragmentBookmark!!)
-            }
-            R.id.bott_nav_history -> {
-
+                loadFragment(fragmentBookmark)
             }
             R.id.bott_nav_about -> {
-
+                loadActivity(activityAbout)
             }
         }
 
@@ -146,12 +155,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun initBottomNavigation() {
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(this)
+
+        val layoutParams: CoordinatorLayout.LayoutParams = bottomNavigation.layoutParams as CoordinatorLayout.LayoutParams
+        layoutParams.behavior = BottomNavigationBehavior()
     }
 
 
     fun loadFragment(fragment: Fragment) {
         fragmentManager.beginTransaction().replace(R.id.frame_container, fragment)
                 .commit()
+    }
+
+    fun loadActivity(activity: Activity) {
+        val new_activity = Intent(this@MainActivity, activity::class.java)
+        startActivity(new_activity)
     }
 
 
