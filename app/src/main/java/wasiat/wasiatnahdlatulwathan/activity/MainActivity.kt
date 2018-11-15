@@ -2,8 +2,6 @@ package wasiat.wasiatnahdlatulwathan.activity
 
 import android.app.Activity
 import android.app.Fragment
-import android.app.SearchManager
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -16,11 +14,8 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBar
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
-import android.view.Menu
 import android.view.MenuItem
-import android.widget.LinearLayout
 import wasiat.wasiatnahdlatulwathan.R
 import wasiat.wasiatnahdlatulwathan.fragment.FragmentBookmark
 import wasiat.wasiatnahdlatulwathan.fragment.FragmentNewWasiat
@@ -33,19 +28,18 @@ class MainActivity : AppCompatActivity(),
 
     lateinit var toolbar: Toolbar
     var actionBar: ActionBar? = null
-    var activitySettings: SettingsActivity
-    var activityAbout: AboutActivity
+    var activityAboutOrganitation: AboutOrganitation
+    var activityAboutApplication: AboutApplication
     var fragmentWasiat: FragmentWasiat
     var fragmentBookmark: FragmentBookmark
     var fragmentHistory: FragmentNewWasiat
 
-
     init {
-        this.activitySettings = SettingsActivity()
         this.fragmentWasiat = FragmentWasiat()
         this.fragmentBookmark = FragmentBookmark()
         this.fragmentHistory = FragmentNewWasiat()
-        this.activityAbout = AboutActivity()
+        this.activityAboutOrganitation = AboutOrganitation()
+        this.activityAboutApplication = AboutApplication()
     }
 
 
@@ -63,26 +57,6 @@ class MainActivity : AppCompatActivity(),
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
-        val searchItem: MenuItem = menu.findItem(R.id.action_search)
-
-        val searchManager: SearchManager = this@MainActivity.getSystemService(Context.SEARCH_SERVICE) as SearchManager
-
-        var searchView: SearchView? = null
-
-        if (true) {
-            searchView = searchItem.actionView as SearchView
-        }
-
-        if (searchView != null) {
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(this@MainActivity.componentName))
-        }
-
-        return super.onCreateOptionsMenu(menu)
-    }
-
     override fun onBackPressed() {
 
         val drawer_layout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -96,16 +70,15 @@ class MainActivity : AppCompatActivity(),
     }
 
 
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_home -> {
-                loadFragment(fragmentWasiat)
-            }
-            R.id.nav_settings -> {
-                loadActivity(activitySettings)
+
+            R.id.nav_about_org -> {
+                loadActivity(activityAboutOrganitation)
             }
             R.id.nav_about -> {
-                loadActivity(activityAbout)
+                loadActivity(activityAboutApplication)
             }
             R.id.bott_nav_wasiat -> {
                 loadFragment(fragmentWasiat)
@@ -117,7 +90,7 @@ class MainActivity : AppCompatActivity(),
                 loadFragment(fragmentBookmark)
             }
             R.id.bott_nav_about -> {
-                loadActivity(activityAbout)
+                loadActivity(activityAboutApplication)
             }
         }
 
@@ -128,7 +101,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    fun initToolbar() {
+    private fun initToolbar() {
         toolbar = findViewById(R.id.toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.color_white))
         setSupportActionBar(toolbar)
@@ -139,7 +112,7 @@ class MainActivity : AppCompatActivity(),
 
     }
 
-    fun initDrawer() {
+    private fun initDrawer() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val toogle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
@@ -147,12 +120,12 @@ class MainActivity : AppCompatActivity(),
         toogle.syncState()
     }
 
-    fun initNavigation() {
+    private fun initNavigation() {
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
     }
 
-    fun initBottomNavigation() {
+    private fun initBottomNavigation() {
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(this)
 
@@ -161,16 +134,14 @@ class MainActivity : AppCompatActivity(),
     }
 
 
-    fun loadFragment(fragment: Fragment) {
+    private fun loadFragment(fragment: Fragment) {
         fragmentManager.beginTransaction().replace(R.id.frame_container, fragment)
                 .commit()
     }
 
-    fun loadActivity(activity: Activity) {
+    private fun loadActivity(activity: Activity) {
         val new_activity = Intent(this@MainActivity, activity::class.java)
         startActivity(new_activity)
     }
-
-
 
 }

@@ -5,9 +5,18 @@ package wasiat.wasiatnahdlatulwathan.model
  */
 class DataModel {
 
+    var id: Int? = null
     var title: String? = null
     var content: String? = null
     var status: Int? = null
+
+    fun setId(id: Int) {
+        this.id = id
+    }
+
+    fun getId(): Int {
+        return id!!
+    }
 
     fun setTitles(title: String) {
         this.title = title
@@ -25,7 +34,7 @@ class DataModel {
         this.content = content
     }
 
-    fun getstatus(): Int {
+    fun getStatus(): Int {
         return status!!
     }
 

@@ -6,21 +6,21 @@
     <item
         android:id="@+id/bott_nav_wasiat"
         android:title="@string/title_wasiat"
-        android:icon="@drawable/ic_menu_wasiat" />
+        android:icon="@drawable/ic_action_books" />
 
     <item
         android:id="@+id/bott_nav_new_wasiat"
         android:title="@string/title_wasiat_baru"
-        android:icon="@drawable/ic_menu_new_wasiat" />
+        android:icon="@drawable/ic_action_new_wasiat" />
 
     <item
         android:id="@+id/bott_nav_bookmark"
         android:title="@string/title_bookmark"
-        android:icon="@drawable/ic_menu_bookmark" />
+        android:icon="@drawable/ic_action_bookmark" />
 
     <item
         android:id="@+id/bott_nav_about"
         android:title="@string/title_about"
-        android:icon="@drawable/ic_menu_about" />
+        android:icon="@drawable/ic_action_about" />
 
 </menu>

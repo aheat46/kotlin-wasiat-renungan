@@ -3,6 +3,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="hide_bottom_view_on_scroll_behavior">hide_bottom_view_on_scroll_behavior</string>
 
     <string name="nama_ponpes">YAYASAN PONDOK PESANTREN SYAIKH ZAINUDDIN</string>
     <string name="alamat_ponpes">NAHDLATUL WATHAN ANJANI LOMBOK TIMUR</string>
@@ -28,6 +29,35 @@
 
     <string name="title_bookmark">Favorit</string>
     <string name="title_about">Tentang</string>
+
+    <string name="about_application">
+
+        Aplikasi ini adalah aplikasi kumpulan seluruh wasiat Guru Besar kita Maulana Syaikh Tuan Guru Kyai Haji (TGKH) Muhammad Zainudiin
+
+        abdul Madjid selama beliau masih hayat
+
+        \n \nAplikasi ini di kembangkan oleh tim pengembang dari SMK AL MUJAHIDIN NW KUMBUNG supaya kita sebagai murid beliau akan tetap ingat akan perintah dan larangan
+
+        beliau untuk terus berjuang melanjutkan perjuangan dan cita-cita beliau untuk menyebarkanluaskan panji-panji Nahdlatul Wathan
+
+        \n \nCopy Right SMK AL MUJAHIDIN NW KUMBUNG, 2019
+        \nMasukkan dan Saran : smkalmujahidin@yahoo.co.id
+
+    </string>
+
+    <string name="about_organitation">
+
+        Setelah menyelesaikan pendidikan di Madrasah As-Saulatiyyah Makkah dan kembali ke tanah air (Indonesia), pada tahun 1934 M., TGKH. Muhammad Zainuddin Abdul Madjid mendirikan Pondok Pesantren Al-Mujahidin. Berselang tiga tahun setelah itu yakni pada tanggal 15 Jumadil Akhir 1356 H. / 22 Agustus 1937 M., beliau mendirikan Madrasah Nahdlatul Wathan Diniyah Islamiyah (NWDI) yang secara khusus menerima murid dari kalangan laki-laki. Lalu pada tanggal 15 Rabi`ul Akhir 1362 H. / 21 April 1943 M., beliau mendirikan Madrasah Nahdlatul Banat Diniyah Islamiyah (NBDI) yang khusus menerima murid dari kalangan perempuan. Kedua madrasah ini merupakan madrasah pertama yang berdiri di Pulau Lombok, dan merupakan cikal bakal berdirinya semua madrasah yang bernaung dibawah organisasi Nahdlatul Wathan.
+
+        \n \nPada zaman penjajahan, TGKH. Muhammad Zainuddin Abdul Madjid juga menjadikan madrasah NWDI dan NBDI sebagai pusat pergerakan kemerdekaan. Bersama guru-guru madrasah NWDI dan NBDI, TGKH. Muhammad Zainuddin Abdul Madjid membentuk gerakan yang diberi nama "Gerakan Al-Mujahidin", yang tujuan utamanya adalah untuk membela tanah air dan merebut kemerdekaan dari rongrongan penjajah dimasa itu.
+
+        \n \nPerkembangan madrasah-madrasah yang merupakan cabang dari NWDI dan NBDI cukup pesat. Pada tahun 1952 M. tercatat sebanyak 66 madrasah telah didirikan oleh para alumni NWDI dan NBDI yang tersebar diberbagai daerah. Untuk lebih memudahkan dalam koordinasi, pembinaan dan pengembangan madrasah-madrasah cabang tersebut, maka pada tanggal 15 Jumadil Akhir 1372 H. / 1 Maret 1953 M., TGKH. Muhammad Zainuddin Abdul Madjid mendirikan organisasi Nahdlatul Wathan yang bergerak dibidang Pendidikan, Sosial dan Dakwah Islamiyah. Hingga tahun 1997 H. tercatat sebanyak 647 lembaga pendidikan telah didirikan, mulai dari tingkat taman kanak-kanak hingga perguruan tinggi. Begitu pula dengan lembaga sosial dan dakwah Islamiyah yang berada dibawah naungan organisasi Nahdlatul Wathan, telah tersebar diseluruh provinsi di Indonesia.
+
+        \n \nSebagai organisasi yang berada didalam negara hukum, organisasi Nahdlatul Wathan secara resmi telah tercatat dalam Akta Notaris Hendrik Alexander Malada dengan Nomor 48 tanggal 29 Oktober 1956. Dan telah berbadan hukum berdasarkan ketetapan Menteri Kehakiman Nomor: J.A.5/10515 tanggal 17 Oktober 1960, serta telah diumumkan melalui Berita Negara Republik Indonesia Nomor 90 tanggal 8 November 1960.
+
+        \n \nPasca meninggalnya pendiri NWDI, NBDI dan NW, hingga saat ini dibawah kepemimpinan putri kesayangan beliau, Al Mujahidah Hj. Sitti Raihanun ZAM, organisasi Nahdlatul Wathan semakin berkembang pesat. Tanpa kenal lelah, sebagai Ketua Umum Pengurus Besar Nahdlatul Wathan dan demi melanjutkan amanah dan cita-cita perjuangan ayahandanya, setiap hari selepas sholat subuh hingga malam hari beliau selalu berkeliling untuk melakukan dakwah dan mendirikan madrasah-madrasah baru. Hingga tahun 2016, tercatat lebih dari 1000 madrasah yang berada dibawah naungan organisasi Nahdlatul Wathan telah didirikan.
+
+    </string>
 
 
 </resources>

@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CursorAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import wasiat.wasiatnahdlatulwathan.R
@@ -40,14 +41,14 @@ class CardAdapterWasiat : RecyclerView.Adapter<CardAdapterWasiat.ViewHolder> {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dbHelper = DBHelper(context)
 
-        val status = dbHelper.checkBookmark(position + 1)
+        val status = dbHelper.checkBookmark(position)
 
         holder.titles.setText(dbList.get(position).getTitles())
 
         if (status == 1) {
-            holder.check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_star_bookmark))
+            holder.check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_action_star_rated))
         } else {
-            holder.check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_star))
+            holder.check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_action_star_outline))
         }
 
 
@@ -75,16 +76,16 @@ class CardAdapterWasiat : RecyclerView.Adapter<CardAdapterWasiat.ViewHolder> {
 
                 val dbHelper = DBHelper(context)
 
-                val status = dbHelper.checkBookmark(adapterPosition + 1)
+                val status = dbHelper.checkBookmark(adapterPosition)
 
                 if (status == 1) {
                     Log.d("TAG", "ini di ubah ke false")
-                    dbHelper.removeBookmark(adapterPosition + 1)
-                    check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_star))
+                    dbHelper.removeBookmark(adapterPosition)
+                    check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_action_star_outline))
                 } else {
                     Log.d("TAG", "ini diubah ke true")
-                    dbHelper.addBookmark(adapterPosition + 1)
-                    check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_star_bookmark))
+                    dbHelper.addBookmark(adapterPosition)
+                    check_bookmark.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_action_star_rated))
                 }
 
 

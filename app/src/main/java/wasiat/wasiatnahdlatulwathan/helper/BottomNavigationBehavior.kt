@@ -34,10 +34,12 @@ class BottomNavigationBehavior : CoordinatorLayout.Behavior<BottomNavigationView
     }
 
     private fun hideBottomNavigation(view: BottomNavigationView) {
+        view.clearAnimation()
         view.animate().translationY(view.height.toFloat())
     }
 
     private fun showBottomNavigation(view: BottomNavigationView) {
+        view.clearAnimation()
         view.animate().translationY(0F)
     }
 

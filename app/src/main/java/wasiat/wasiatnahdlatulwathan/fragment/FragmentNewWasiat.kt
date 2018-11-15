@@ -19,4 +19,6 @@ class FragmentNewWasiat : Fragment() {
         return view
     }
 
+
+
 }

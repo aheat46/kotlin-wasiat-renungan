@@ -1,10 +1,7 @@
 package wasiat.wasiatnahdlatulwathan.adapter
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import wasiat.wasiatnahdlatulwathan.R
 import wasiat.wasiatnahdlatulwathan.activity.DetailActivity
-import wasiat.wasiatnahdlatulwathan.helper.DBHelper
 import wasiat.wasiatnahdlatulwathan.model.DataModel
-import java.util.zip.Inflater
 
 /**
  * Created by aheat on 8/17/18.
@@ -44,8 +39,9 @@ class ListViewAdapterBookmark: BaseAdapter {
         title = convertView!!.findViewById(R.id.title)
 
         title!!.setText(dbList.get(position).getTitles())
+        val _id = dbList.get(position).getId()
 
-        convertView.setOnClickListener { openDetailActivity(position) }
+        convertView.setOnClickListener { openDetailActivity(_id) }
 
 
         return convertView
