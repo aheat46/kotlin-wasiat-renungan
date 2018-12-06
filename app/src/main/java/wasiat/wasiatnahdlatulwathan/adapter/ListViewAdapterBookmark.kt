@@ -23,6 +23,7 @@ class ListViewAdapterBookmark: BaseAdapter {
     val dbList: List<DataModel>
 
 
+
     constructor(activity: Activity, dbList: List<DataModel>) {
         this.activity = activity
         this.dbList = dbList
@@ -35,6 +36,8 @@ class ListViewAdapterBookmark: BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(activity).inflate(R.layout.item_list_bookmark, parent, false)
         }
+
+        notifyDataSetChanged()
 
         title = convertView!!.findViewById(R.id.title)
 

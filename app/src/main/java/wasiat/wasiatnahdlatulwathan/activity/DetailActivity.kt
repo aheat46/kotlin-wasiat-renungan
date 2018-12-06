@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import wasiat.wasiatnahdlatulwathan.R
+import wasiat.wasiatnahdlatulwathan.adapter.ListViewAdapterBookmark
 import wasiat.wasiatnahdlatulwathan.helper.DBHelper
 import wasiat.wasiatnahdlatulwathan.model.DataModel
 import java.lang.reflect.Array
@@ -52,6 +53,8 @@ class DetailActivity: AppCompatActivity() {
 
         val content = _content.replace(",", "\n")
 
+        val adapter = ListViewAdapterBookmark(this, dbList!!)
+
         if (_status == 1) {
             action_bookmark!!.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.ic_action_star_rated))
         } else {
@@ -64,11 +67,13 @@ class DetailActivity: AppCompatActivity() {
                 Log.d("TAG", "ini di ubah ke false")
                 dbHelper.removeBookmark(_id)
                 action_bookmark!!.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.ic_action_star_outline_white))
+                adapter.notifyDataSetChanged()
 
             } else {
                 Log.d("TAG", "ini di ubah ke true")
                 dbHelper.addBookmark(_id)
                 action_bookmark!!.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.ic_action_star_rated))
+                adapter.notifyDataSetChanged()
             }
 
         }
